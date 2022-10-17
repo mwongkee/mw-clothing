@@ -1,13 +1,15 @@
 import { Fragment } from 'react';
 import { Outlet, Link } from 'react-router-dom';
+import { ReactComponent as MwLogo } from '../../assets/cool.svg';
+import './navigation.styles.scss';
 
 const Navigation = () => {
   return (
     <Fragment>
       <div className='navigation'>
         <Link className='nav-link' to='/'>
-          <div>Logo</div>
-        </Link>
+          <MwLogo className='logo-container'/>
+          </Link>
         <div className='nav-links-container'>
           <Link className='nav-link' to='/shop'>
             SHOP
