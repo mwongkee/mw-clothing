@@ -6,7 +6,7 @@ import {
   auth,
   signInWithGooglePopup, 
   signInWithGoogleRedirect, 
-  createUserDocumentFromAuth 
+  createUserDocumentFromAuth
 } from "../../utils/firebase/firebase.utils";
 
 const SignIn = () => {
