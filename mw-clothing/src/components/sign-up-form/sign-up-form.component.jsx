@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { 
   createAuthUserWithEmailAndPassword,
+  createUserDocumentFromAuth
 } from "../../utils/firebase/firebase.utils";
 
 const defaultFormFields = {
@@ -22,8 +23,8 @@ const SignUpForm = () => {
       alert("Passwords don't match");
     }
     try {
-      const response = createAuthUserWithEmailAndPassword(email, password);
-      console.log(response);
+      const {user} = createAuthUserWithEmailAndPassword(email, password);
+      await createUserDocumentFromAuth(user, {displayName});
     } catch(error) {
       console.log('User creation encountered an error', error);
     }
